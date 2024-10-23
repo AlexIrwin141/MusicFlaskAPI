@@ -55,58 +55,58 @@ flask run
 API Endpoints:
 
 Artists
-GET /artists – Retrieve all artists.
-GET /artists/<artist_id> – Retrieve a specific artist.
-POST /artists – Add a new artist.
-example body:
-   {
-    "name": "The Clash",
-    "nationality": "British",
-    "year_formed": 1976
-  }
-PUT /artists/<artist_id> – Update an existing artist.
-DELETE /artists/<artist_id> – Delete an artist.
+GET /artists – Retrieve all artists.  
+GET /artists/<artist_id> – Retrieve a specific artist.  
+POST /artists – Add a new artist.  
+example body:  
+   {  
+    "name": "The Clash",  
+    "nationality": "British",  
+    "year_formed": 1976  
+  }  
+PUT /artists/<artist_id> – Update an existing artist.  
+DELETE /artists/<artist_id> – Delete an artist.  
 
-Albums
-GET /albums – Retrieve all albums.
-GET /albums/<album_id> – Retrieve a specific album.
-POST /artist/<int:artist_id>/albums – Add a new album for an artist.
-example body:
-{"name": "Combat Rock",
-"release_date": "1982-05-14"} 
-PUT /albums/<album_id> – Update an album.
-DELETE /albums/<album_id> – Delete an album.
+Albums  
+GET /albums – Retrieve all albums.  
+GET /albums/<album_id> – Retrieve a specific album.  
+POST /artist/<int:artist_id>/albums – Add a new album for an artist.  
+example body:  
+{"name": "Combat Rock",  
+"release_date": "1982-05-14"}   
+PUT /albums/<album_id> – Update an album.  
+DELETE /albums/<album_id> – Delete an album.  
 
-Tracks
-GET /albums/<album_id>/tracks – Retrieve all tracks for an album.
-POST /albums/<album_id>/tracks – Add a new track to an album.
-example body:
-{"title": "Anarchy In The UK"}
-PUT /tracks/<track_id> – Update a track.
-DELETE /tracks/<track_id> – Delete a track.
+Tracks  
+GET /albums/<album_id>/tracks – Retrieve all tracks for an album.  
+POST /albums/<album_id>/tracks – Add a new track to an album.  
+example body:  
+{"title": "Anarchy In The UK"}  
+PUT /tracks/<track_id> – Update a track.  
+DELETE /tracks/<track_id> – Delete a track.  
 
-Playlists
-GET /playlists – Retrieve all playlists.
-GET /playlists/<playlist_id> – Retrieve a specific playlist.
-POST /playlists – Create a new playlist.
-example body:
-{"name": "A very punk playlist"}
-PUT /playlists/<playlist_id> – Update a playlist.
-DELETE /playlists/<playlist_id> – Delete a playlist.
+Playlists  
+GET /playlists – Retrieve all playlists.  
+GET /playlists/<playlist_id> – Retrieve a specific playlist.  
+POST /playlists – Create a new playlist.  
+example body:  
+{"name": "A very punk playlist"}  
+PUT /playlists/<playlist_id> – Update a playlist.  
+DELETE /playlists/<playlist_id> – Delete a playlist.  
 
-Playlist_Tracks
-POST /playlists/<int:playlist_id>/tracks/<int:track_id> - Add track to a playlist
-DELETE /playlists/<int:playlist_id>/tracks/<int:track_id> - Remove track from a playlist
+Playlist_Tracks  
+POST /playlists/<int:playlist_id>/tracks/<int:track_id> - Add track to a playlist  
+DELETE /playlists/<int:playlist_id>/tracks/<int:track_id> - Remove track from a playlist  
  
-Search and Filter
-GET /artists/search – Search for artists by name (case insensitive).
-example body:
-{"name": "cl"}
-GET /artist/<int:artist_id>/tracks' – Retrieve all tracks by an artist.
-GET /playlist/search/<int:track_id> – Retrieve playlists containing a specific track.
-GET /backtracks/<int:artist_id> - Retrieve all tracks by an artist with the track name being reversed. I just wanted to see if I could use a function ewhen generating the response.
+Search and Filter  
+GET /artists/search – Search for artists by name (case insensitive).  
+example body:  
+{"name": "cl"}  
+GET /artist/<int:artist_id>/tracks' – Retrieve all tracks by an artist.  
+GET /playlist/search/<int:track_id> – Retrieve playlists containing a specific track.  
+GET /backtracks/<int:artist_id> - Retrieve all tracks by an artist with the track name being reversed. I just wanted to see if I could use a function ewhen generating the response.  
 
-Error Handling
+Error Handling  
 Each endpoint returns appropriate error messages in the following format when things go wrong:
 {
   "message": "Artist not found"
