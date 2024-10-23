@@ -19,11 +19,7 @@ from werkzeug.exceptions import BadRequest
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:OldTrafford@localhost/music_db'
-#logging.basicConfig()
-#logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
 
-#db = SQLAlchemy(app)
 db.init_app(app)
 migrate = Migrate(app, db)
 api = Api(app)
