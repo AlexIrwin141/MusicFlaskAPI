@@ -1,2 +1,0 @@
-set FLASK_APP=main.py
-set DATABASE_URL=postgresql+psycopg2://postgresql+psycopg2://postgres:OldTrafford@localhost/music_db
