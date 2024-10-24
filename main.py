@@ -25,12 +25,9 @@ migrate = Migrate(app, db)
 api = Api(app)
 
 
-
-
-
 @app.route('/')
 def home():
-    return 'This is the home page'
+    return jsonify({"message": "Welcome to the Music Flask API!", "status": "running"}) 
 
 api.add_resource(ArtistResource, '/artist', '/artist/<int:artist_id>') # endpoint for artist queries
 api.add_resource(AlbumResource, '/albums/<int:album_id>', '/artist/<int:artist_id>/albums', '/albums') # endpoint for album queries
