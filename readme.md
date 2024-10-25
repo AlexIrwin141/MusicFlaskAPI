@@ -29,10 +29,10 @@ pgAdmin for database management (optional)
 
 Before running the application, make sure to set the necessary environment variables:  
 
-# Set the FLASK_APP environment variable  
+Set the FLASK_APP environment variable  
 set FLASK_APP=main.py  
 
-# Set the DATABASE_URL environment variable (replace with your actual database URL)
+Set the DATABASE_URL environment variable (replace with your actual database URL)
 set DATABASE_URL=postgresql+psycopg2://<username>:<password>@localhost/<db_name>
 
 Installation
