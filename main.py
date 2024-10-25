@@ -13,12 +13,22 @@ from resources.playlistTrack import playlistTrackResource
 from resources.search_and_filter import TracksByArtist, SearchForArtist, PLaylistWithTrackName, ReverseTrackName
 
 from models import db
-import logging
+# Going to take the logging aspect out for the time being. Its there if I need to debug.
+#import logging
+#from logging.handlers import RotatingFileHandler
+
+# Set up logging
+#handler = RotatingFileHandler('app.log', maxBytes=10000, backupCount=1)
+#handler.setLevel(logging.INFO)
+
+import traceback
 from werkzeug.exceptions import BadRequest
 
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+#app.logger.addHandler(handler)
+
 
 db.init_app(app)
 migrate = Migrate(app, db)
@@ -60,6 +70,7 @@ def bad_request_error(error):
 # Error handler for 500 Internal Server Error
 @app.errorhandler(500)
 def internal_error(error):
+    logging.error("An error occurred: %s", traceback.format_exc())    
     return jsonify({
         'error': 'Server error',
         'message': 'An internal server error occurred. Please try again later.'
@@ -75,7 +86,5 @@ def handle_unexpected_error(error):
 
 
 if __name__ == "__main__":
-    #with app.app_context():
-   #     db.create_all()
-    app.run(debug=True)
+    app.run(debug=False)  # will change this later to be set dynamically
 

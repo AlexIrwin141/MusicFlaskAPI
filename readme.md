@@ -27,6 +27,14 @@ Python 3.x
 PostgreSQL
 pgAdmin for database management (optional)
 
+Before running the application, make sure to set the necessary environment variables:  
+
+# Set the FLASK_APP environment variable  
+set FLASK_APP=main.py  
+
+# Set the DATABASE_URL environment variable (replace with your actual database URL)
+set DATABASE_URL=postgresql+psycopg2://<username>:<password>@localhost/<db_name>
+
 Installation
 Clone the Repository:
 git clone https://github.com/AlexIrwin141/MusicFlaskAPI.git
