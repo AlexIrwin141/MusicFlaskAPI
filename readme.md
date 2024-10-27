@@ -5,11 +5,8 @@ This project is a Flask RESTful API that allows users to manage artists, albums,
 Features
 Create, retrieve, update, and delete (CRUD) operations for Artists, Albums, Tracks, and Playlists.
 Many-to-many relationship between Tracks and Playlists.
-Search functionality for finding artists and tracks.
+Search functionality for finding artists, albums and tracks.
 Specialty features like reversing track names.
-
-Features:
-Manage artists, albums, and tracks
 Organize tracks into playlists
 Search tracks by artist and find playlists containing specific tracks
 Fully RESTful API with proper HTTP methods and status codes
