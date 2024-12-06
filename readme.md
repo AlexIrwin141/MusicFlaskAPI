@@ -29,7 +29,7 @@ Before running the application, make sure to set the necessary environment varia
 Set the FLASK_APP environment variable  
 set FLASK_APP=main.py  
 
-Set the DATABASE_URL environment variable (replace with your actual database URL)
+Set the DATABASE_URL environment variable (replace with your actual database URL)  
 set DATABASE_URL=postgresql+psycopg2://<username>:<password>@localhost/<db_name>
 
 Installation
@@ -43,9 +43,9 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
 
 Set up PostgreSQL Database:
-Create a PostgreSQL user and database. You can use pgAdmin for ease of use:
-CREATE USER username WITH PASSWORD 'yourpassword';
-CREATE DATABASE music_db OWNER username;
+Create a PostgreSQL user and database. You can use pgAdmin for ease of use:  
+CREATE USER username WITH PASSWORD 'yourpassword';  
+CREATE DATABASE (db_name) OWNER username;
 
 Run Database Migrations:
 flask db init
@@ -112,15 +112,15 @@ GET /playlist/search/<int:track_id> – Retrieve playlists containing a specific
 GET /backtracks/<int:artist_id> - Retrieve all tracks by an artist with the track name being reversed. I just wanted to see if I could use a function ewhen generating the response.  
 
 Error Handling  
-Each endpoint returns appropriate error messages in the following format when things go wrong:
+Each endpoint returns appropriate error messages in the following format when things go wrong:  
 {
   "message": "Artist not found"
-}
-404 Not Found: Resource doesn't exist
-400 Bad Request: Invalid input
-201 Created: Successful creation
-200 OK: Successful retrieval or update
-500 Internal Server Error: Unexpected issues
+}  
+404 Not Found: Resource doesn't exist  
+400 Bad Request: Invalid input  
+201 Created: Successful creation  
+200 OK: Successful retrieval or update  
+500 Internal Server Error: Unexpected issues  
 
 
 License
